@@ -2,7 +2,7 @@ import torch
 import torch.nn as nn
 import torch.optim as optim
 from model import AutoEncoder
-from data import load_mnist, preprocess_images
+from database import load_mnist, preprocess_images
 
 def train_model(num_epochs=10, batch_size=64, lr=1e-3):
     train_loader, _ = load_mnist(batch_size)

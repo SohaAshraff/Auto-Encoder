@@ -2,8 +2,8 @@ import torch
 import torch.nn as nn
 
 class Encoder(nn.Module):
-    def init(self):
-        super(Encoder, self).init()
+    def __init__(self):
+        super(Encoder, self).__init__()
         self.encoder = nn.Sequential(
             nn.Linear(784, 128),
             nn.ReLU(True),
@@ -15,8 +15,8 @@ class Encoder(nn.Module):
     def forward(self, x):
         return self.encoder(x)
 class AutoEncoder(nn.Module):
-    def init(self):
-        super(AutoEncoder, self).init()
+    def __init__(self):
+        super(AutoEncoder, self).__init__()
         self.encoder = Encoder()
         self.decoder = Decoder()
 
