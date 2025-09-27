@@ -1,0 +1,80 @@
+[
+    {
+        "label": "torch",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "torch",
+        "description": "torch",
+        "detail": "torch",
+        "documentation": {}
+    },
+    {
+        "label": "torch.nn",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "torch.nn",
+        "description": "torch.nn",
+        "detail": "torch.nn",
+        "documentation": {}
+    },
+    {
+        "label": "torch.optim",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "torch.optim",
+        "description": "torch.optim",
+        "detail": "torch.optim",
+        "documentation": {}
+    },
+    {
+        "label": "AutoEncoder",
+        "importPath": "model",
+        "description": "model",
+        "isExtraImport": true,
+        "detail": "model",
+        "documentation": {}
+    },
+    {
+        "label": "load_mnist",
+        "importPath": "data",
+        "description": "data",
+        "isExtraImport": true,
+        "detail": "data",
+        "documentation": {}
+    },
+    {
+        "label": "preprocess_images",
+        "importPath": "data",
+        "description": "data",
+        "isExtraImport": true,
+        "detail": "data",
+        "documentation": {}
+    },
+    {
+        "label": "preprocess_images",
+        "kind": 2,
+        "importPath": "database",
+        "description": "database",
+        "peekOfCode": "def preprocess_images(images):\n    # Normalize between 0 and 1 or any other preprocessing logic\n    images = images.view(images.size(0), -1)  # flatten\n    images = images / 255.0 if images.max() > 1 else images\n    return images\ndef denormalize_images(images):\n    # convert back to image shape for visualization\n    return images.view(-1, 1, 28, 28)",
+        "detail": "database",
+        "documentation": {}
+    },
+    {
+        "label": "denormalize_images",
+        "kind": 2,
+        "importPath": "database",
+        "description": "database",
+        "peekOfCode": "def denormalize_images(images):\n    # convert back to image shape for visualization\n    return images.view(-1, 1, 28, 28)",
+        "detail": "database",
+        "documentation": {}
+    },
+    {
+        "label": "train_model",
+        "kind": 2,
+        "importPath": "train",
+        "description": "train",
+        "peekOfCode": "def train_model(num_epochs=10, batch_size=64, lr=1e-3):\n    train_loader, _ = load_mnist(batch_size)\n    model = AutoEncoder()\n    criterion = nn.MSELoss()\n    optimizer = optim.Adam(model.parameters(), lr=lr)\n    model.train()\n    for epoch in range(num_epochs):\n        total_loss = 0\n        for imgs, _ in train_loader:\n            imgs = preprocess_images(imgs)",
+        "detail": "train",
+        "documentation": {}
+    }
+]
