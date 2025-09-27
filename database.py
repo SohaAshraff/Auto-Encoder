@@ -1,6 +1,7 @@
+
 from torchvision import datasets, transforms
 from torch.utils.data import DataLoader
-
+import torch
 def load_mnist(batch_size=64):
     transform = transforms.Compose([
         transforms.ToTensor(),
@@ -10,7 +11,8 @@ def load_mnist(batch_size=64):
     train_loader = DataLoader(train_data, batch_size=batch_size, shuffle=True)
     test_loader = DataLoader(test_data, batch_size=batch_size, shuffle=False)
     return train_loader, test_loader
-import torch
+
+
 
 def preprocess_images(images):
     # Normalize between 0 and 1 or any other preprocessing logic

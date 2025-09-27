@@ -26,6 +26,7 @@ class AutoEncoder(nn.Module):
         decoded = self.decoder(encoded)
         return decoded
 
+
 class Decoder(nn.Module):
     def __init__(self):
         super(Decoder, self).__init__()
